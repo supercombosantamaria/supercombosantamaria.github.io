@@ -82,30 +82,27 @@ section:not(.hero) {
 }
 
 /* VIDEOS */
-.videos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
-.video-container {
+.video-card {
   position: relative;
-  width: 100%;
-  max-width: 500px;
-  padding-bottom: 56.25%; /* proporción 16:9 */
-}
-
-.video-container iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 16/9;
 }
 
 .video-card img {
   width: 100%;
-  display: block;
+  height: 100%;
+  object-fit: cover;
 }
 
 .play {
@@ -123,6 +120,7 @@ section:not(.hero) {
   transform: scale(1.05);
   transition: 0.3s;
 }
+
 
 /* GALERIA */
 .gallery {
@@ -226,12 +224,12 @@ section:not(.hero) {
   <div class="video-grid">
 
     <div class="video-card" onclick="loadVideo(this, 'DGXIPgm97DU')">
-      <img src="https://img.youtube.com/vi/VIDEO_ID_1/hqdefault.jpg">
+      <img src="https://img.youtube.com/vi/DGXIPgm97DU/hqdefault.jpg">
       <div class="play">▶</div>
     </div>
 
     <div class="video-card" onclick="loadVideo(this, 'EtGpNfByHD4')">
-      <img src="https://img.youtube.com/vi/VIDEO_ID_2/hqdefault.jpg">
+      <img src="https://img.youtube.com/vi/EtGpNfByHD4/hqdefault.jpg">
       <div class="play">▶</div>
     </div>
 
@@ -350,11 +348,11 @@ window.addEventListener("scroll", () => {
 function loadVideo(element, videoId) {
   element.innerHTML = `
     <iframe 
-      src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
-      frameborder="0" 
-      allow="autoplay; encrypted-media" 
+      src="https://www.youtube.com/embed/${videoId}?autoplay=1"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
       allowfullscreen
-      style="width:100%; height:100%;">
+      style="width:100%; height:100%; border-radius:12px;">
     </iframe>
   `;
 }
