@@ -4,28 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Super Combo Santa María | Música Tropical en Vivo</title>
+<title>SuperCombo Santa María | Música Tropical en Vivo</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&family=Pacifico&display=swap" rel="stylesheet">
 
 <style>
 
 :root {
-  --primary: #ff512f;
-  --secondary: #dd2476;
+  --primary: #00c6ff;
+  --secondary: #0072ff;
+  --accent: #ffd700;
 }
 
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #0d0d0d;
+  background: radial-gradient(circle at top, #0b1a3a, #000);
   color: white;
 }
 
 /* HERO */
 .hero {
   height: 100vh;
-  padding: 20px;
   background: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4') center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -39,21 +39,24 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.7);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
+  animation: fadeIn 1.2s ease;
 }
 
 .hero h1 {
   font-family: 'Pacifico', cursive;
   font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--accent);
+  text-shadow: 0 0 20px rgba(255,215,0,0.8);
 }
 
 .hero p {
-  font-size: clamp(1rem, 3vw, 1.3rem);
+  font-size: 1.2rem;
   margin: 15px 0;
 }
 
@@ -64,24 +67,28 @@ body {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  display: inline-block;
-  transition: .3s;
+  box-shadow: 0 0 15px rgba(0,198,255,0.5);
+  transition: 0.3s;
 }
 
 .btn:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0,198,255,0.9);
 }
 
 /* SECCIONES */
-section:not(.hero) {
+section {
   padding: 60px 20px;
   text-align: center;
+}
+
+section:not(.hero) {
   opacity: 0;
   transform: translateY(40px);
   transition: 0.6s;
 }
 
-/* VIDEOS */
+/* VIDEOS PRO */
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -97,12 +104,19 @@ section:not(.hero) {
   overflow: hidden;
   background: #000;
   aspect-ratio: 16/9;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  transition: 0.3s;
 }
 
 .video-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.video-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0,198,255,0.4);
 }
 
 .play {
@@ -116,12 +130,6 @@ section:not(.hero) {
   border-radius: 50%;
 }
 
-.video-card:hover {
-  transform: scale(1.05);
-  transition: 0.3s;
-}
-
-
 /* GALERIA */
 .gallery {
   display: grid;
@@ -132,27 +140,6 @@ section:not(.hero) {
 .gallery img {
   width: 100%;
   border-radius: 10px;
-  transition: .3s;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* TESTIMONIOS */
-.testimonio {
-  background: #1a1a1a;
-  padding: 20px;
-  border-radius: 15px;
-  margin: 10px auto;
-  max-width: 500px;
-}
-
-/* FEATURES */
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
 }
 
 /* REPERTORIO */
@@ -160,7 +147,6 @@ section:not(.hero) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 10px;
-  margin-top: 20px;
 }
 
 .repertorio div {
@@ -171,8 +157,7 @@ section:not(.hero) {
 }
 
 .repertorio div:hover {
-  background: linear-gradient(45deg, #ff512f, #dd2476);
-  transform: scale(1.03);
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
 }
 
 /* WHATSAPP */
@@ -185,15 +170,16 @@ section:not(.hero) {
   border-radius: 50%;
   font-size: 22px;
   text-decoration: none;
-  z-index: 1000;
+}
+
+/* ANIMACION */
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
-  section {
-    padding: 40px 15px;
-  }
-
   .btn {
     display: block;
     width: 90%;
@@ -209,12 +195,20 @@ section:not(.hero) {
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Super Combo Santa María</h1>
+    <h1>SuperCombo Santa María</h1>
     <p>Convertimos tu evento en una fiesta inolvidable 🎉</p>
-    <a class="btn" href="https://wa.me/573052448369?text=Hola%20quiero%20cotizar%20un%20evento" target="_blank">
+    <a class="btn" href="https://wa.me/573052448369" target="_blank">
       📲 Cotizar por WhatsApp
     </a>
   </div>
+</section>
+
+<!-- INFO -->
+<section>
+  <h2>🎉 Nuestros Eventos</h2>
+  <p>Bodas • Eventos • Cumpleaños • Integraciones • Grados</p>
+  <p><strong>📲 305 244 8369</strong></p>
+  <p>Albino Santa María</p>
 </section>
 
 <!-- VIDEOS -->
@@ -233,131 +227,43 @@ section:not(.hero) {
       <div class="play">▶</div>
     </div>
 
-    <div class="video-card" onclick="loadVideo(this, 'gmwJZdeppuY')">
-      <img src="https://img.youtube.com/vi/gmwJZdeppuY/hqdefault.jpg">
-      <div class="play">▶</div>
-    </div>
-
-    <div class="video-card" onclick="loadVideo(this, '2feBITxSLVI')">
-      <img src="https://img.youtube.com/vi/2feBITxSLVI/hqdefault.jpg">
-      <div class="play">▶</div>
-    </div>
-    
-    <div class="video-card" onclick="loadVideo(this, 'qsW6piluxFg')">
-      <img src="https://img.youtube.com/vi/qsW6piluxFg/hqdefault.jpg">
-      <div class="play">▶</div>
-    </div>
-    
   </div>
 </section>
 
 <!-- GALERIA -->
 <section>
   <h2>📸 La Fiesta</h2>
-
   <div class="gallery">
     <img src="https://via.placeholder.com/300">
     <img src="https://via.placeholder.com/300">
     <img src="https://via.placeholder.com/300">
     <img src="https://via.placeholder.com/300">
   </div>
-
 </section>
 
 <!-- REPERTORIO -->
 <section>
   <h2>🎶 Repertorio</h2>
-  <p>Algunos de los éxitos que ponemos a bailar en cada evento</p>
-
   <div class="repertorio">
-    <div>Amargo y Dulce – Los Melódicos</div>
-    <div>Caimán y Gallinazo – Doris Salas</div>
-    <div>Cuando Hablan las Miradas – Guayacán Orquesta</div>
-    <div>Vagabundo Soy – Los Hispanos</div>
-    <div>Mosaico La Revancha – Iván y sus Bam Bam</div>
-    <div>La Canoa Rancha – Grupo Niche</div>
-    <div>La Sirena – Nelson y sus Estrellas</div>
-    <div>Las Brujas – La Sonora Dinamita</div>
-    <div>Llorarás – Oscar D'León</div>
-    <div>Loquito por Ti – Armando Hernández</div>
-    <div>Te Aprovechas de Mí – Los Melódicos</div>
-    <div>Dos Copas – Los Número Uno</div>
-    <div>Mala Mujer – La Sonora Matancera</div>
     <div>Cali Pachanguero – Grupo Niche</div>
-    <div>Cariñito Sin Mí – Pastor López</div>
+    <div>Llorarás – Oscar D'León</div>
     <div>Las Caleñas – Pastor López</div>
-    <div>Pecadora – Pastor López</div>
-    <div>Que No Quede Huella – Rodolfo Aicardi</div>
-    <div>El Viejo del Sombrerón – Sonora Dinamita</div>
+    <div>La Canoa Ranchá – Tradicional</div>
     <div>La Conga – Sonora Dinamita</div>
-    <div>Las Velas Encendidas – Sonora Dinamita</div>
-    <div>Sobre las Olas – Latin Brothers</div>
-    <div>Vendaval – El Combo de las Estrellas</div>
-    <div>El Hijo Ausente – Pastor López</div>
-    <div>Sigue tu Camino – Dimensión Latina</div>
-    <div>Mujeres – La Identidad</div>
-    <div>Idilio – Willie Colón</div>
+    <div>Que No Quede Huella – Bronco</div>
   </div>
-</section>
-
-<!-- TESTIMONIOS -->
-<section>
-  <h2>⭐ Testimonios</h2>
-
-  <div class="testimonio">
-    “La mejor banda que pudimos contratar, todos bailaron toda la noche”
-    <br><strong>- Cliente fiestas de Santa Rosa de Cabal</strong>
-  </div>
-
-  <div class="testimonio">
-    “Energía increíble, super recomendados”
-    <br><strong>- Evento empresarial</strong>
-  </div>
-
-</section>
-
-<!-- FEATURES -->
-<section>
-  <h2>🎺 ¿Por qué elegirnos?</h2>
-
-  <div class="features">
-    <div>🎶 Música 100% en vivo</div>
-    <div>💃 Interacción con el público</div>
-    <div>🎤 Repertorio variado</div>
-    <div>🎉 Experiencia en eventos</div>
-  </div>
-
 </section>
 
 <!-- CTA -->
 <section>
   <h2>📲 Agenda tu evento</h2>
-  <p>Fechas limitadas disponibles</p>
-
-  <a class="btn" href="https://wa.me/573052448369?text=Hola%20quiero%20contratar%20la%20orquesta" target="_blank">
+  <a class="btn" href="https://wa.me/573052448369" target="_blank">
     Cotizar ahora
   </a>
 </section>
 
-<!-- BOTON WHATSAPP -->
+<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/573052448369" target="_blank">💬</a>
-
-<!-- ANIMACIONES -->
-<script>
-const sections = document.querySelectorAll("section");
-
-window.addEventListener("scroll", () => {
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    const trigger = window.innerHeight - 100;
-
-    if (top < trigger) {
-      sec.style.opacity = 1;
-      sec.style.transform = "translateY(0)";
-    }
-  });
-});
-</script>
 
 <script>
 function loadVideo(element, videoId) {
@@ -367,10 +273,23 @@ function loadVideo(element, videoId) {
       frameborder="0"
       allow="autoplay; encrypted-media"
       allowfullscreen
-      style="width:100%; height:100%; border-radius:12px;">
+      style="width:100%; height:100%;">
     </iframe>
   `;
 }
+
+const sections = document.querySelectorAll("section:not(.hero)");
+
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.style.opacity = 1;
+      sec.style.transform = "translateY(0)";
+    }
+  });
+});
 </script>
+
 </body>
 </html>
