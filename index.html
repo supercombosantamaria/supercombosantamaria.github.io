@@ -130,6 +130,26 @@ section {
   gap: 20px;
 }
 
+/* REPERTORIO */
+.repertorio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.repertorio div {
+  background: #1a1a1a;
+  padding: 12px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.repertorio div:hover {
+  background: linear-gradient(45deg, #ff512f, #dd2476);
+  transform: scale(1.03);
+}
+
 /* WHATSAPP */
 .whatsapp {
   position: fixed;
@@ -166,7 +186,7 @@ section {
   <div class="hero-content">
     <h1>SuperCombo Santa María</h1>
     <p>Convertimos tu evento en una fiesta inolvidable 🎉</p>
-    <a class="btn" href="https://wa.me/573001234567?text=Hola%20quiero%20cotizar%20un%20evento" target="_blank">
+    <a class="btn" href="https://wa.me/573054882523?text=Hola%20quiero%20cotizar%20un%20evento" target="_blank">
       📲 Cotizar por WhatsApp
     </a>
   </div>
@@ -177,11 +197,11 @@ section {
   <h2>🎥 En Vivo</h2>
 
   <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/DGXIPgm97DU" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
   </div>
 
   <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/EtGpNfByHD4" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
   </div>
 
 </section>
@@ -199,13 +219,46 @@ section {
 
 </section>
 
+<!-- REPERTORIO -->
+<section>
+  <h2>🎶 Repertorio</h2>
+  <p>Algunos de los éxitos que ponemos a bailar en cada evento</p>
+
+  <div class="repertorio">
+    <div>Amargo y Dulce – Los Melódicos</div>
+    <div>Caimán y Gallinazo – Tradicional</div>
+    <div>Cuando Hablan las Miradas – Guayacán Orquesta</div>
+    <div>Vagabundo Soy – Los Hispanos</div>
+    <div>Revancha – Iván y sus Bam Bam</div>
+    <div>La Canoa Ranchá – Tradicional</div>
+    <div>La Sirena – Tradicional</div>
+    <div>Las Brujas – Tradicional</div>
+    <div>Llorarás – Oscar D'León</div>
+    <div>Loquito por Ti – Armando Hernández</div>
+    <div>Te Aprovechas de Mí – Los Melódicos</div>
+    <div>Dos Copas – Los Número Uno</div>
+    <div>Mala Mujer – Tradicional</div>
+    <div>Cali Pachanguero – Grupo Niche</div>
+    <div>Cariñito Sin Mí – Pastor López</div>
+    <div>Las Caleñas – Pastor López</div>
+    <div>Pecadora – Pastor López</div>
+    <div>Que No Quede Huella – Bronco</div>
+    <div>Si Me Dejas No Vale – Luis Enrique</div>
+    <div>El Viejo del Sombrerón – Sonora Dinamita</div>
+    <div>La Conga – Sonora Dinamita</div>
+    <div>Las Velas Encendidas – Sonora Dinamita</div>
+    <div>Sobre las Olas – Instrumental</div>
+    <div>Vendaval – Tradicional</div>
+  </div>
+</section>
+
 <!-- TESTIMONIOS -->
 <section>
   <h2>⭐ Testimonios</h2>
 
   <div class="testimonio">
     “La mejor banda que pudimos contratar, todos bailaron toda la noche”
-    <br><strong>- Viejoteca de la Quinta</strong>
+    <br><strong>- Cliente boda</strong>
   </div>
 
   <div class="testimonio">
@@ -239,9 +292,7 @@ section {
 </section>
 
 <!-- BOTON WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/573054882523" target="_blank">
-💬
-</a>
+<a class="whatsapp" href="https://wa.me/573054882523" target="_blank">💬</a>
 
 <!-- ANIMACIONES -->
 <script>
