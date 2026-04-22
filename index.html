@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SuperCombo Santa María | Música Tropical en Vivo</title>
+<title>Super Combo Santa María | Música Tropical en Vivo</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&family=Pacifico&display=swap" rel="stylesheet">
 
@@ -101,6 +101,27 @@ section:not(.hero) {
   width: 100%;
   height: 100%;
   border-radius: 10px;
+}
+
+.video-card img {
+  width: 100%;
+  display: block;
+}
+
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  background: rgba(0,0,0,0.6);
+  padding: 10px 15px;
+  border-radius: 50%;
+}
+
+.video-card:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
 }
 
 /* GALERIA */
@@ -202,14 +223,19 @@ section:not(.hero) {
 <section>
   <h2>🎥 En Vivo</h2>
 
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/DGXIPgm97DU" allowfullscreen></iframe>
-  </div>
+  <div class="video-grid">
 
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/EtGpNfByHD4" allowfullscreen></iframe>
-  </div>
+    <div class="video-card" onclick="loadVideo(this, 'DGXIPgm97DU')">
+      <img src="https://img.youtube.com/vi/VIDEO_ID_1/hqdefault.jpg">
+      <div class="play">▶</div>
+    </div>
 
+    <div class="video-card" onclick="loadVideo(this, 'EtGpNfByHD4')">
+      <img src="https://img.youtube.com/vi/VIDEO_ID_2/hqdefault.jpg">
+      <div class="play">▶</div>
+    </div>
+
+  </div>
 </section>
 
 <!-- GALERIA -->
@@ -320,5 +346,18 @@ window.addEventListener("scroll", () => {
 });
 </script>
 
+<script>
+function loadVideo(element, videoId) {
+  element.innerHTML = `
+    <iframe 
+      src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
+      frameborder="0" 
+      allow="autoplay; encrypted-media" 
+      allowfullscreen
+      style="width:100%; height:100%;">
+    </iframe>
+  `;
+}
+</script>
 </body>
 </html>
