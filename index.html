@@ -82,12 +82,18 @@ section:not(.hero) {
 }
 
 /* VIDEOS */
+.videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 600px;
-  margin: 20px auto;
-  padding-bottom: 56.25%;
+  max-width: 500px;
+  padding-bottom: 56.25%; /* proporción 16:9 */
 }
 
 .video-container iframe {
