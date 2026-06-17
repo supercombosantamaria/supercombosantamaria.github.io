@@ -141,6 +141,41 @@ section:not(.hero) {
   transform: scale(1.05);
 }
 
+/* LIGHTBOX FOTOS */
+
+.gallery img {
+  cursor: pointer;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.3);
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+}
+  
 /* TESTIMONIOS */
 .testimonio {
   background: #1a1a1a;
@@ -359,9 +394,73 @@ section:not(.hero) {
 </section>
   
 <!-- VIDEOS -->
+<!-- VIDEOS - INTERPRETACIONES -->
 <section>
-  <h2>🎥 En Vivo</h2>
 
+<h2>🎧 Nuestras Interpretaciones</h2>
+
+<p>
+Versiones musicales y grabaciones realizadas por Super Combo Santa María.
+</p>
+
+<div class="video-grid">
+
+<div class="video-card" onclick="loadVideo(this, 'TWpVgqEb4QM')">
+<img src="https://img.youtube.com/vi/TWpVgqEb4QM/hqdefault.jpg">
+<div class="play">▶</div>
+</div>
+
+<div class="video-card" onclick="loadVideo(this, 'DlUJ6s3e_kQ')">
+<img src="https://img.youtube.com/vi/DlUJ6s3e_kQ/hqdefault.jpg">
+<div class="play">▶</div>
+</div>
+
+<div class="video-card" onclick="loadVideo(this, 'r5mg8iz7rSs')">
+<img src="https://img.youtube.com/vi/r5mg8iz7rSs/hqdefault.jpg">
+<div class="play">▶</div>
+</div>
+
+<div class="video-card" onclick="loadVideo(this, 'TUHXy3alpiA')">
+<img src="https://img.youtube.com/vi/TUHXy3alpiA/hqdefault.jpg">
+<div class="play">▶</div>
+</div>
+
+<div class="video-card" onclick="loadVideo(this, 'T1oBsOY5L6U')">
+<img src="https://img.youtube.com/vi/T1oBsOY5L6U/hqdefault.jpg">
+<div class="play">▶</div>
+</div>
+
+<div class="video-card" onclick="loadVideo(this, 'AQUI_ID_YOUTUBE_2')">
+<img src="https://img.youtube.com/vi/AQUI_ID_YOUTUBE_2/hqdefault.jpg">
+<div class="play">▶</div>
+</div>
+
+<div class="video-card" onclick="loadVideo(this, '6_bnJi2g_x8')">
+<img src="https://img.youtube.com/vi/6_bnJi2g_x8/hqdefault.jpg">
+<div class="play">▶</div>
+</div>
+
+<div class="video-card" onclick="loadVideo(this, 'qKW3_UQmuFc')">
+<img src="https://img.youtube.com/vi/qKW3_UQmuFc/hqdefault.jpg">
+<div class="play">▶</div>
+</div>
+
+<div class="video-card" onclick="loadVideo(this, 'w2_l0u7_ETA')">
+<img src="https://img.youtube.com/vi/w2_l0u7_ETA/hqdefault.jpg">
+<div class="play">▶</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- VIDEOS - PRESENTACIONES -->
+<section>
+  <h2>🎥 Presentaciones En Vivo</h2>
+  <p>
+    Disfruta la energía de Super Combo Santa María en conciertos y eventos.
+  </p>
+  
   <div class="video-grid">
 
     <div class="video-card" onclick="loadVideo(this, 'DGXIPgm97DU')">
@@ -397,11 +496,11 @@ section:not(.hero) {
   <h2>📸 El Super Combo</h2>
 
   <div class="gallery">
-    <img src="Foto01.jpeg">
-    <img src="Foto02.jpeg">
-    <img src="Foto03.jpeg">
-    <img src="Foto04.jpeg">
-    <img src="foto05.jpeg">
+    <img src="Foto01.jpeg onclick="openImage(this.src)">
+    <img src="Foto02.jpeg onclick="openImage(this.src)">
+    <img src="Foto03.jpeg onclick="openImage(this.src)">
+    <img src="Foto04.jpeg onclick="openImage(this.src)">
+    <img src="foto05.jpeg onclick="openImage(this.src)">
   </div>
 
 </section>
@@ -514,5 +613,25 @@ function loadVideo(element, videoId) {
   `;
 }
 </script>
+
+<div class="lightbox" id="lightbox" onclick="closeImage()">
+  <span class="close">×</span>
+  <img id="lightbox-img">
+</div>
+
+
+<script>
+
+function openImage(src){
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox").style.display="flex";
+}
+
+function closeImage(){
+  document.getElementById("lightbox").style.display="none";
+}
+
+</script>
+  
 </body>
 </html>
