@@ -92,13 +92,49 @@ section:not(.hero) {
   margin: auto;
 }
 
-.video-card {
-  position: relative;
-  cursor: pointer;
+..video-card {
+  background: #111;
   border-radius: 12px;
   overflow: hidden;
-  background: #000;
+  transition: .3s;
+}
+
+.video-card:hover {
+  transform: scale(1.03);
+}
+
+
+.video-container {
+  position: relative;
   aspect-ratio: 16/9;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+
+.video-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.video-title {
+  padding: 12px;
+  text-align: center;
+}
+
+
+.video-title h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+
+.video-title p {
+  margin: 5px 0 0;
+  color: #ccc;
+  font-size: 14px;
 }
 
 .video-card img {
@@ -443,6 +479,8 @@ Versiones musicales y grabaciones realizadas por Super Combo Santa María.
 <div class="video-card" onclick="loadVideo(this, 'TWpVgqEb4QM')">
 <img src="https://img.youtube.com/vi/TWpVgqEb4QM/hqdefault.jpg">
 <div class="play">▶</div>
+</div>
+<div class="video-title">
 <h3>Loco por Ti - Pastor López</h3>
 </div>
 
